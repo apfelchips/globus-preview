@@ -1,6 +1,6 @@
 # doc: https://docs.travis-ci.com/user/job-lifecycle/
 language: cpp
-sudo: required
+os: linux
 dist: xenial
 addons:
   apt:
@@ -41,7 +41,6 @@ before_deploy:
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
-  skip_cleanup: true
 
 env: # https://docs.travis-ci.com/user/environment-variables/#default-environment-variables
   global:

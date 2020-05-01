@@ -13,10 +13,12 @@ if [ -z "${2:-$TRAVIS_TOKEN}" ]; then
     exit 1
 fi
 
+set -x
+
 curl -s -X POST \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "Travis-API-Version: 3" \
-    -H "Authorization: token ${2:-$TRAVIS_TOKEN} \
+    -H "Authorization: token ${2:-$TRAVIS_TOKEN}" \
     -d "{\"quiet\": true}" \
-    https://api.travis-ci.org/job/${1:-$TRAVIS_JOB_ID}/debug
+    https://api.travis-ci.com/job/${1:-$TRAVIS_JOB_ID}/debug
