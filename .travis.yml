@@ -6,7 +6,7 @@ addons:
   apt:
     packages:
       - build-essential
-      - gettext
+      - autopoint
       - python3
       - python3-dbus
       - python3-gi
